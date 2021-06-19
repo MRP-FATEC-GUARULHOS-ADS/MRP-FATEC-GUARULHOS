@@ -33,7 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.25\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,31 +50,133 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProdutoDAO.cs" />
-    <Compile Include="Produto.cs" />
-    <Compile Include="Conexao.cs" />
-    <Compile Include="frmMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMenu.Designer.cs">
-      <DependentUpon>frmMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmCadastroGrupos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCadastroGrupos.Designer.cs">
-      <DependentUpon>frmCadastroGrupos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Grupo.cs" />
-    <Compile Include="GrupoDAO.cs" />
+    <Compile Include="Conexao\ComponenteDAO.cs" />
+    <Compile Include="Conexao\Conexao.cs" />
+    <Compile Include="Conexao\FornecedorComponenteDAO.cs" />
+    <Compile Include="Conexao\FornecedorDAO.cs" />
+    <Compile Include="Conexao\GrupoDAO.cs" />
+    <Compile Include="Conexao\MovimentacaoEstoqueDAO.cs" />
+    <Compile Include="Conexao\ProdutoDAO.cs" />
+    <Compile Include="Modelo\Componente.cs" />
+    <Compile Include="Modelo\Fornecedor.cs" />
+    <Compile Include="Modelo\FornecedorComponente.cs" />
+    <Compile Include="Modelo\Grupo.cs" />
+    <Compile Include="Modelo\MovimentacaoEstoque.cs" />
+    <Compile Include="Modelo\Produto.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.6.1.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMenu.resx">
-      <DependentUpon>frmMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCadastroGrupos.resx">
+    <Compile Include="Visual\Cadastro de Componentes\Controles\pnlEspecificacao.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Componentes\Controles\pnlEspecificacao.Designer.cs">
+      <DependentUpon>pnlEspecificacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Componentes\frmCadastroComponentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Componentes\frmCadastroComponentes.Designer.cs">
+      <DependentUpon>frmCadastroComponentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Componentes\frmCadastroComponentesInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Componentes\frmCadastroComponentesInsert.Designer.cs">
+      <DependentUpon>frmCadastroComponentesInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Componentes\frmCadastroComponentesUpdate .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Componentes\frmCadastroComponentesUpdate .Designer.cs">
+      <DependentUpon>frmCadastroComponentesUpdate .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedores.Designer.cs">
+      <DependentUpon>frmCadastroFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresConsulta.Designer.cs">
+      <DependentUpon>frmCadastroFornecedoresConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresConsultaInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresConsultaInsert.Designer.cs">
+      <DependentUpon>frmCadastroFornecedoresConsultaInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresConsultaUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresConsultaUpdate.Designer.cs">
+      <DependentUpon>frmCadastroFornecedoresConsultaUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresInsert.Designer.cs">
+      <DependentUpon>frmCadastroFornecedoresInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresUpdate.Designer.cs">
+      <DependentUpon>frmCadastroFornecedoresUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Compras\frmCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Compras\frmCompras.Designer.cs">
+      <DependentUpon>frmCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Compras\frmComprasInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Compras\frmComprasInsert.Designer.cs">
+      <DependentUpon>frmComprasInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Compras\frmComprasView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Compras\frmComprasView.Designer.cs">
+      <DependentUpon>frmComprasView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\frmCadastroGrupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\frmCadastroGrupos.Designer.cs">
       <DependentUpon>frmCadastroGrupos.cs</DependentUpon>
-    </EmbeddedResource>
+    </Compile>
+    <Compile Include="Visual\frmCadastroProdutoFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\frmCadastroProdutoFinal.Designer.cs">
+      <DependentUpon>frmCadastroProdutoFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.Cadastro_de_Componentes.frmCadastroComponentes.resources" />
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.Cadastro_de_Componentes.frmCadastroComponentesInsert.resources" />
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.Cadastro_de_Componentes.frmCadastroComponentesUpdate.resources" />
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.Cadastro_de_Fornecedores.frmCadastroFornecedores.resources" />
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.Cadastro_de_Fornecedores.frmCadastroFornecedoresConsulta.resources" />
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.Cadastro_de_Fornecedores.frmCadastroFornecedoresConsultaInsert.resources" />
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.Cadastro_de_Fornecedores.frmCadastroFornecedoresConsultaUpdate.resources" />
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.Cadastro_de_Fornecedores.frmCadastroFornecedoresInsert.resources" />
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.Cadastro_de_Fornecedores.frmCadastroFornecedoresUpdate.resources" />
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.Compras.frmCompras.resources" />
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.Compras.frmComprasInsert.resources" />
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.Compras.frmComprasView.resources" />
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.frmCadastroGrupos.resources" />
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.frmMenu.resources" />
+    <EmbeddedResource Include="obj\Debug\MRP_SacoCarvao.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -81,7 +186,60 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Visual\Cadastro de Componentes\frmCadastroComponentes.resx">
+      <DependentUpon>frmCadastroComponentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Cadastro de Componentes\frmCadastroComponentesInsert.resx">
+      <DependentUpon>frmCadastroComponentesInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Cadastro de Componentes\frmCadastroComponentesUpdate .resx">
+      <DependentUpon>frmCadastroComponentesUpdate .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedores.resx">
+      <DependentUpon>frmCadastroFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresConsulta.resx">
+      <DependentUpon>frmCadastroFornecedoresConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresConsultaInsert.resx">
+      <DependentUpon>frmCadastroFornecedoresConsultaInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresConsultaUpdate.resx">
+      <DependentUpon>frmCadastroFornecedoresConsultaUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresInsert.resx">
+      <DependentUpon>frmCadastroFornecedoresInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Cadastro de Fornecedores\frmCadastroFornecedoresUpdate.resx">
+      <DependentUpon>frmCadastroFornecedoresUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Compras\frmCompras.resx">
+      <DependentUpon>frmCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Compras\frmComprasInsert.resx">
+      <DependentUpon>frmComprasInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Compras\frmComprasView.resx">
+      <DependentUpon>frmComprasView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\frmCadastroGrupos.resx">
+      <DependentUpon>frmCadastroGrupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\frmCadastroProdutoFinal.resx">
+      <DependentUpon>frmCadastroProdutoFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Banco de Dados\ModeloBD-Projeto.vsdx" />
+    <None Include="bin\Debug\MRP-SacoCarvao.exe.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\MRP-SacoCarvao.csproj.CopyComplete" />
+    <None Include="obj\Debug\MRP-SacoCarvao.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\MRP-SacoCarvao.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\MRP-SacoCarvao.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\MRP-SacoCarvao.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,6 +255,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Banco de Dados\Script Banco MRP.sql" />
+    <Content Include="bin\Debug\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\Debug\Google.Protobuf.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="bin\Debug\K4os.Hash.xxHash.dll" />
+    <Content Include="bin\Debug\MRP-SacoCarvao.exe" />
+    <Content Include="bin\Debug\MRP-SacoCarvao.pdb" />
+    <Content Include="bin\Debug\MySql.Data.dll" />
+    <Content Include="bin\Debug\MySql.Data.xml" />
+    <Content Include="bin\Debug\System.Buffers.dll" />
+    <Content Include="bin\Debug\System.Memory.dll" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\Debug\Ubiety.Dns.Core.dll" />
+    <Content Include="bin\Debug\Zstandard.Net.dll" />
+    <Content Include="favicon.ico" />
+    <Content Include="obj\Debug\MRP-SacoCarvao.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\MRP-SacoCarvao.exe" />
+    <Content Include="obj\Debug\MRP-SacoCarvao.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,7 +4,7 @@ CREATE DATABASE MRP;
 USE MRP;
 
 CREATE TABLE PRODUTO (
- idProduto int primary key,
+ idProduto int primary key AUTO_INCREMENT,
  nomeProduto varchar(100) not null,
  descrProduto varchar(1000),
  qtdeMinEstoque int,
@@ -28,9 +28,9 @@ ADD CONSTRAINT FK_PRODUTO_GRUPO
 FOREIGN KEY (idGrupo) REFERENCES GRUPO(idGrupo);
 
 CREATE TABLE COMPONENTE (
- idComponente int primary key,
- nomeComponente varchar(100) not null,
- descrComponente varchar(1000),
+ idComponente int primary key AUTO_INCREMENT,
+ tipoComponente varchar(100) not null,
+ modeloComponente varchar(1000),
  qtdeMinEstoque int,
  qtdeMaxEstoque int,
  qtdeAtualEstoque int,
@@ -53,7 +53,7 @@ ADD CONSTRAINT FK_ESTRUTURAPRODUTO_COMPONENTE
 FOREIGN KEY (idComponente) REFERENCES COMPONENTE(idComponente);
 
 CREATE TABLE FORNECEDOR (
- idFornecedor int primary key,
+ idFornecedor int primary key AUTO_INCREMENT,
  nomeFornecedor varchar(100),
  tipoLogradouro varchar(20),
  logradouro varchar(150),
@@ -100,7 +100,7 @@ ADD CONSTRAINT FK_MOVIMENTACAOESTOQUEPRODUTO_PRODUTO
 FOREIGN KEY (idProduto) REFERENCES Produto(idProduto);
 
 CREATE TABLE MOVIMENTACAOESTOQUECOMPONENTE (
-  idMovimentacaoComponente int primary key,
+  idMovimentacaoComponente int primary key AUTO_INCREMENT,
   dataMovimentacao date not null,
   tipoDocumento varchar(30) not null,
   nrDocumento varchar(30) not null,
@@ -116,28 +116,35 @@ FOREIGN KEY (idComponente) REFERENCES COMPONENTE(idComponente);
 -- DADOS
 INSERT INTO GRUPO VALUES (1,'Notebook'), (2,'Desktop'), (3,'Tablet'), (4,'Celular');
 
-INSERT INTO PRODUTO VALUES (1, 'Notebook A3', 'Notebook A3 A315-33-C58D Intel Celeron N3060 15,6" 4GB HD 500 GB Linux', 10, 200, 50, null, null, null, null, null, 1);  
-INSERT INTO PRODUTO VALUES (2, 'Notebook S145', 'Notebook S145 81WT0006BR Intel Celeron N4020 15,6" 4GB SSD 128 GB Windows', 10, 200, 50, null, null, null, null, null, 1);  
-INSERT INTO PRODUTO VALUES (3, 'Notebook P', 'Notebook P Motion Plus Q464B Intel Atom 14" 4GB eMMC', 10, 200, 50, null, null, null, null, null, 1);  
-INSERT INTO PRODUTO VALUES (4, 'Notebook S', 'Notebook S Book E20 NP550XCJ-KO2BR Intel Celeron 5205U 15,6" 4GB HD 500 GB', 10, 200, 50, null, null, null, null, null, 1);  
+INSERT INTO PRODUTO (
+  nomeProduto, descrProduto, qtdeMinEstoque, qtdeMaxEstoque, qtdeAtualEstoque,
+  altura, comprimento, largura, peso, especificacao, idGrupo
+) VALUES
+  ('Notebook A3', 'Notebook A3 A315-33-C58D Intel Celeron N3060 15,6" 4GB HD 500 GB Linux', 10, 200, 50, null, null, null, null, null, 1),
+  ('Notebook S145', 'Notebook S145 81WT0006BR Intel Celeron N4020 15,6" 4GB SSD 128 GB Windows', 10, 200, 50, null, null, null, null, null, 1),
+  ('Notebook P', 'Notebook P Motion Plus Q464B Intel Atom 14" 4GB eMMC', 10, 200, 50, null, null, null, null, null, 1),
+  ('Notebook S', 'Notebook S Book E20 NP550XCJ-KO2BR Intel Celeron 5205U 15,6" 4GB HD 500 GB', 10, 200, 50, null, null, null, null, null, 1);
 
-INSERT INTO COMPONENTE VALUES 
- (1, 'Intel Celeron N3060','Intel Celeron N3060', 100, 1000, 200, NULL)
-,(2, 'Intel Celeron N4020','Intel Celeron N4020', 100, 1000, 200, NULL)
-,(3, 'Intel Core i5 1035G1','Intel Core i5 1035G1', 100, 1000, 200, NULL)
-,(4, 'Intel Core i3 10110U','Intel Core i3 10110U', 100, 1000, 200, NULL)
-,(5, 'Intel Core i5 9300H','Intel Core i5 9300H', 100, 1000, 200, NULL)
-,(6, 'HD 500 GB','HD 500 GB', 100, 1000, 200, NULL)
-,(7, 'HD 1 TB','HD 1 TB', 100, 1000, 200, NULL)
-,(8, 'SSD 500 GB','SSD 500 GB', 100, 1000, 200, NULL)
-,(9, 'Memória RAM 4 GB','Memória RAM 4 GB', 100, 1000, 200, NULL)
-,(10, 'Memória RAM 8 GB','Memória RAM 8 GB', 100, 1000, 200, NULL)
-,(11, 'Tela Notebook 15.6"','Tela Notebook 15.6"', 100, 1000, 200, NULL)
-,(12, 'Tela Notebook 14"','Tela Notebook 14"', 100, 1000, 200, NULL)
-,(13, 'Windows 10','Windows 10', 100, 1000, 200, NULL)
-,(14, 'Linux Ubuntu 20.04.2.0 LTS','Linux Ubuntu 20.04.2.0 LTS', 100, 1000, 200, NULL)
-,(15, 'Linux Mint 20.1 Ulyssa','Linux Mint 20.1 Ulyssa', 100, 1000, 200, NULL)
-,(16, 'Memória RAM 16 GB','Memória RAM 16 GB', 100, 1000, 200, NULL);
+INSERT INTO COMPONENTE (
+  tipoComponente, modeloComponente, qtdeMinEstoque,
+  qtdeMaxEstoque, qtdeAtualEstoque, especificacao
+) VALUES 
+  ('Processador','Intel Celeron N3060', 100, 1000, 200, NULL),
+  ('Processador','Intel Celeron N4020', 100, 1000, 200, NULL),
+  ('Processador','Intel Core i5 1035G1', 100, 1000, 200, NULL),
+  ('Processador','Intel Core i3 10110U', 100, 1000, 200, NULL),
+  ('Processador','Intel Core i5 9300H', 100, 1000, 200, NULL),
+  ('HD','HD 500 GB', 100, 1000, 200, NULL),
+  ('HD','HD 1 TB', 100, 1000, 200, NULL),
+  ('SSD','SSD 500 GB', 100, 1000, 200, NULL),
+  ('Memória RAM','Memória RAM 4 GB', 100, 1000, 200, NULL),
+  ('Memória RAM','Memória RAM 8 GB', 100, 1000, 200, NULL),
+  ('Tela','Tela Notebook 15.6"', 100, 1000, 200, NULL),
+  ('Tela','Tela Notebook 14"', 100, 1000, 200, NULL),
+  ('Sistema','Windows 10', 100, 1000, 200, NULL),
+  ('Sistema','Linux Ubuntu 20.04.2.0 LTS', 100, 1000, 200, NULL),
+  ('Sistema','Linux Mint 20.1 Ulyssa', 100, 1000, 200, NULL),
+  ('Memória RAM','Memória RAM 16 GB', 100, 1000, 200, NULL);
 
 INSERT INTO ESTRUTURAPRODUTO VALUES 
    (1,  1, 1) ,(1,  6, 1) ,(1,  9, 1) ,(1, 11, 1) ,(1, 14, 1)
@@ -150,7 +157,7 @@ SELECT
  p.idProduto,
  p.nomeProduto,
  c.idComponente,
- c.nomeComponente,
+ c.modeloComponente,
  g.idGrupo,
  g.nomeGrupo
 From Produto p
