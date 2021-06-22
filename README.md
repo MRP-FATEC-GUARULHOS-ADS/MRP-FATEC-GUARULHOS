@@ -89,8 +89,13 @@ Pronto, mudança feita, espero que tenha valido a pena.
     - Diagrama de Caso de Uso
     - Fluxograma
     - Diagrama de Classes
+- Compras
+    - usar o id do fornecedor pra registrar compras
+    - poder editar o tipo de movimentação
+    - registrar qual usuário fez cada registro
 - Interface
     - agora tem q fazer as caixinhas de texto e oscaraio
+    - garantir que os campos sejam preenchidos da forma certa
 - Banco de dados
     - Subir o banco no Azure (?)
     - Usar o banco entre módulos
@@ -99,6 +104,5 @@ Pronto, mudança feita, espero que tenha valido a pena.
     - nomenclatura das variáveis e elementos do layout
     - comentários
     - interface
-- Enterrar o módulo de compras?
 
 ![Saco de carvão](/img/logo.png)
