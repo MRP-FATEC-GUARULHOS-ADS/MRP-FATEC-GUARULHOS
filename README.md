@@ -5,7 +5,7 @@ MRP (Manufacturing Resource Planning) da honrada montadora Saco de Carvão Compu
 O programa criado no windows forms, em C#, é responsável por cadastrar e controlar o estoque de componentes e produtos finalizados em um banco de dados MySql.
 
 ## Como baixar o projeto
-Se você faz parte do 3° semestre de ADS tem duas coisas que mudaram entre o segundo e terceiro semestres:
+Se você faz parte do 4° semestre de ADS, tem duas coisas que mudaram entre o segundo e terceiro semestres que você deveria saber:
 
 1. Depois das mudanças estruturais feitas pelo professor [Alécio](https://github.com/aleciogodoi), o MRP finalmente faz sentido e está a um passo de se tornar funcional.
 
@@ -81,6 +81,23 @@ Pronto, mudança feita, espero que tenha valido a pena.
 
 ## Coisas a fazer
 
+- Banco de dados
+    - Subir o banco no Azure (?)
+    - Usar o banco entre módulos
+    - Proteger as strings de acesso ao banco de dados
+- Interface
+    - agora tem q fazer as caixinhas de texto e oscaraio
+    - tooltips com o modo certo de preenchimento das caixas de texto
+    - página de 'ajuda'
+    - página de 'sobre'
+- Tratamento de erros
+    - garantir que os campos sejam preenchidos da forma certa
+    - imprimir os catchs no console pelo menos
+- Padronização
+    - nomenclatura das variáveis e elementos do layout
+    - comentários
+    - aparência uniforme da interface
+
 - Documentação dos módulos
     - Diagrama de Caso de Uso
     - Fluxograma
@@ -89,20 +106,10 @@ Pronto, mudança feita, espero que tenha valido a pena.
     - Diagrama de Caso de Uso
     - Fluxograma
     - Diagrama de Classes
-- Compras
+    
+- Módulo de Compras
     - usar o id do fornecedor pra registrar compras
     - poder editar o tipo de movimentação
     - registrar qual usuário fez cada registro
-- Interface
-    - agora tem q fazer as caixinhas de texto e oscaraio
-    - garantir que os campos sejam preenchidos da forma certa
-- Banco de dados
-    - Subir o banco no Azure (?)
-    - Usar o banco entre módulos
-    - Proteger as strings de acesso ao banco de dados
-- Padronização
-    - nomenclatura das variáveis e elementos do layout
-    - comentários
-    - interface
 
 ![Saco de carvão](/img/logo.png)
