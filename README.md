@@ -7,7 +7,7 @@ O programa criado no windows forms, em C#, é responsável por cadastrar e contr
 ## Como baixar o projeto
 Se você faz parte do 4° semestre de ADS, tem duas coisas que mudaram entre o segundo e terceiro semestres que você deveria saber:
 
-1. Depois das mudanças estruturais feitas pelo professor [Alécio](https://github.com/aleciogodoi), o MRP finalmente faz sentido e está a um passo de se tornar funcional.
+1. Depois das mudanças estruturais feitas pelo professor [Alécio](https://github.com/aleciogodoi), o MRP já está com o backend todo planejado e a um passo de se tornar funcional.
 
 2. Ficou ainda mais difícil contribuir com o projeto...
 
